@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>GoPro Goals</h1>
+				</section>
+				<section data-background="images/presentacion.jpg"></section>
+				<section>
+					<h2>Motivación</h2>	
+				</section>
+
+				<!-- GOALS -->
+				
+				<section data-background-video="images/goals_video.mp4" data-background-video-loop	>
+					<h2>1. Beneficio para el jugador</h2>
+				</section>
+				<section>
+					
+					<img src="images/goals_videos.png" class="penalty-views"/>
+				</section>
+			
+				<!-- VINTAGE -->
+				<section data-background-video="images/vintage.mp4" data-background-video-muted>
+					<h2>2. Viralización en redes sociales</h2>
+				</section>
+				<section>
+
+					<div class="img-container">
+						<img class="social-media-img" src="images/cropped_vintage.png"/>
+
+						<img class="social-media-img" src="images/cropped_messi.png" />
+					</div>
+					
+
+				</section>
+				
+				<!-- LA PERON -->
+				<section data-background-video="images/penalty.mp4" data-background-video-muted>
+					<h2>3. Alcanzar los medios</h2>
+				</section>
+				<section>
+					<img src="images/la gaceta.png" class="penalty-views"/>
+				</section>
+				<section>
+					<h2>¿Por qué una GoPro?</h2>
+					<ul>
+						<li>Fácil de conseguir</li>
+						<li>Tiene una API!</li>
+						<li>Cherokee WebServer</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Comandos</h2>
+					<a target="_blank" href="https://github.com/KonradIT/goprowifihack">Unofficial GoPro Wifi API</a>
+					<pre>
+<code data-trim data-noescape>#ENABLE STREAMING
+curl -i "http://10.5.5.9/camera/PV?t=$GOPROPASS&p=%02"
+vlc "http://10.5.5.9:8080/live/amba.m3u8"
+
+# MODO FILMACION
+curl "http://10.5.5.9/camera/CM?t=$GOPROPASS&p=%00"
+
+# GRABAR (SHUTTER)
+curl "http://10.5.5.9/bacpac/SH?t=$GOPROPASS&p=%01"</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Comandos</h2>
+					<pre>
+<code data-trim data-noescape># ARCHIVOS EN LA CAMARA (CHEROKEE) 
+open "http://10.5.5.9:8080/videos/DCIM/100GOPRO/"
+
+# DESCARGAR ULTIMOS 5 SEGUNDOS
+ffmpeg -sseof -5 -i "$VIDEO_URL" -c copy output.mp4
+
+# BORRAR TODOS LOS ARCHIVOS DE LA CAMARA
+curl "http://10.5.5.9/camera/DA?t=$GOPROPASS"</code>
+					</pre>
+				</section>
+				<section>
+					<h2>React Native App</h2>
+					<ul>
+						<li>fetch API</li>
+						<li><a href="https://github.com/santiagovazquez/react-native-video-processing" target="_blank">santiagovazquez/react-native-video-processing</a></li>
+					</ul>
+				</section>
+				<section>
+					<img src="images/code.png"/>
+				</section>
+				<section data-background-video="images/gol_cris.mp4" data-background-video-loop>
+				</section>
+			</div>
+		</div>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+		</script>
+	</body>
+</html>

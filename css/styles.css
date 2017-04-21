@@ -1,0 +1,29 @@
+.inline {
+	display: inline-block;
+}
+
+.about-self-container {
+	display: flex;
+}
+
+.my-name {
+	flex: 1;
+}
+
+.alentame-url {
+	flex: 1;
+}
+
+.messi-adidas-container {
+	display: inline-flex;
+	width: 100%;
+}
+
+.adidas-messi-img {
+	flex: 1;
+}
+
+.img-container .social-media-img {
+	display: inline-block;
+	width: 45%;
+}
